@@ -14,6 +14,12 @@
 .calculator .calculator__topdisplay {
   height: 22%;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 36px;
+  padding-right: 4%;
+  padding-bottom: 4%;
 }
 .calculator .calculator__input {
   width: 100%;
@@ -61,6 +67,9 @@
   .calculator {
     height: 650px;
     width: 400px;
+  }
+  .calculator .calculator__topdisplay {
+    font-size: 60px;
   }
   .calculator .calculator__input {
     justify-items: center;
