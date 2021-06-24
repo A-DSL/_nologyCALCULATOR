@@ -8,4 +8,24 @@
 // = will return you a number in the same way that using a second operator would. 
 //C makes the front number 0.
 var frontnumber = 0;
-var backnumber = 0;
+var backnumber = 0; //Calculator button HTML
+
+var acButton = document.querySelector(".AC");
+var posNegButton = document.querySelector(".posneg");
+var percentButton = document.querySelector(".percent");
+var divideButton = document.querySelector(".divide");
+var sevenButton = document.querySelector(".seven");
+var eightButton = document.querySelector(".eight");
+var nineButton = document.querySelector(".nine");
+var multiplyButton = document.querySelector(".multiply");
+var fourButton = document.querySelector(".four");
+var fiveButton = document.querySelector(".five");
+var sixButton = document.querySelector(".six");
+var minusButton = document.querySelector(".minus");
+var oneButton = document.querySelector(".one");
+var twoButton = document.querySelector(".two");
+var threeButton = document.querySelector(".three");
+var plusButton = document.querySelector(".plus");
+var zeroButton = document.querySelector(".zero");
+var decimalButton = document.querySelector(".decimal");
+var equalsButton = document.querySelector(".equals");
