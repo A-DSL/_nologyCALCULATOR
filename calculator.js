@@ -7,8 +7,16 @@
 // = will return you a number in the same way that using a second operator would. 
 //C makes the front number 0.
 
-let frontnumber = 0;
-let backnumber = 0;
+
+//Variables that will hold the numbers.
+let frontNumber = 0;
+let backNumber = 0;
+
+//Variable that keeps track of whether an operator is being used.
+let operatorToggle = false;
+
+//Calculator display HTML
+const calcDisplay = document.querySelector(".calculator__topdisplay");
 
 //Calculator button HTML
 const acButton = document.querySelector(".AC");
