@@ -120,6 +120,12 @@ zeroButton.addEventListener("click", function (parameter) {
   } else {
     calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "0";
   }
+}); //decimal button. only adds a decimal if there isn't one yet.
+
+decimalButton.addEventListener("click", function (parameter) {
+  if (calcDisplay.innerHTML.includes(".")) {} else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + ".";
+  }
 }); //negative/positive number toggle
 
 posNegButton.addEventListener("click", function (parameter) {

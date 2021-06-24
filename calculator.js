@@ -137,6 +137,15 @@ zeroButton.addEventListener("click", (parameter) => {
     }
 })
 
+//decimal button. only adds a decimal if there isn't one yet.
+decimalButton.addEventListener("click", (parameter) => {
+    if (calcDisplay.innerHTML.includes(".")){
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "." 
+    }
+})
+
 //negative/positive number toggle
 posNegButton.addEventListener("click", (parameter) => {
     if (posnegToggle == false){
