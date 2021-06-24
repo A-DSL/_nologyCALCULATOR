@@ -11,7 +11,12 @@
 var frontNumber = 0;
 var backNumber = 0; //Variable that keeps track of whether an operator is being used.
 
-var operatorToggle = false; //Calculator display HTML
+var operatorToggle = false; //Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
+
+var divideToggle = false;
+var multiplyToggle = false;
+var minusToggle = false;
+var plusToggle = false; //Calculator display HTML
 
 var calcDisplay = document.querySelector(".calculator__topdisplay"); //Calculator button HTML
 

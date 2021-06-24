@@ -14,6 +14,11 @@ let backNumber = 0;
 
 //Variable that keeps track of whether an operator is being used.
 let operatorToggle = false;
+//Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
+let divideToggle = false;
+let multiplyToggle = false;
+let minusToggle = false;
+let plusToggle = false;
 
 //Calculator display HTML
 const calcDisplay = document.querySelector(".calculator__topdisplay");
