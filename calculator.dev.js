@@ -7,8 +7,7 @@
 // +, -, X and / all create the specific operator (this operator is not shown on screen, but is highlighted on the right). if another number is entered after this operator is used, the first number is stored seperately as the 'back number' and the second number is shown on screen as the new 'front number'. if an operator is used again following this, the first and second numbers are combined by the operator and shown on screen, and entering another number will make that the new front number.
 // = will return you a number in the same way that using a second operator would. 
 //C makes the front number 0.
-//Variables that will hold the numbers.
-var frontNumber = 0;
+//Variable that will hold the back number (made when a new front number is made for operations).
 var backNumber = 0; //Variable that keeps track of whether an operator is being used.
 
 var operatorToggle = false;
@@ -140,4 +139,61 @@ posNegButton.addEventListener("click", function (parameter) {
 
 percentButton.addEventListener("click", function (parameter) {
   calcDisplay.innerHTML = "".concat(Number(calcDisplay.innerHTML) / 100);
+}); //operator buttons. assigns class and affects button toggles.
+//divide
+
+divideButton.addEventListener("click", function (parameter) {
+  if (divideToggle == false) {
+    //on
+    divideToggle == true; //off
+
+    multiplyToggle == false;
+    minusToggle == false;
+    plusToggle == false;
+  } else if (divideToggle == true) {
+    //off
+    divideToggle = false;
+  }
+}); //multiply
+
+multiplyButton.addEventListener("click", function (parameter) {
+  if (multiplyToggle == false) {
+    //on
+    multiplyToggle == true; //off
+
+    divideToggle == false;
+    minusToggle == false;
+    plusToggle == false;
+  } else if (multiplyToggle == true) {
+    //off
+    multiplyToggle = false;
+  }
+}); //minus
+
+minusButton.addEventListener("click", function (parameter) {
+  if (minusToggle == false) {
+    //on
+    minusToggle == true; //off
+
+    divideToggle == false;
+    multiplyToggle == false;
+    plusToggle == false;
+  } else if (minusToggle == true) {
+    //off
+    minusToggle = false;
+  }
+}); //plus
+
+plusButton.addEventListener("click", function (parameter) {
+  if (plusToggle == false) {
+    //on
+    plusToggle == true; //off
+
+    divideToggle == false;
+    multiplyToggle == false;
+    minusToggle == false;
+  } else if (plusToggle == true) {
+    //off
+    plusToggle = false;
+  }
 });
