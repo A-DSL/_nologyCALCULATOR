@@ -38,4 +38,85 @@ var threeButton = document.querySelector(".three");
 var plusButton = document.querySelector(".plus");
 var zeroButton = document.querySelector(".zero");
 var decimalButton = document.querySelector(".decimal");
-var equalsButton = document.querySelector(".equals");
+var equalsButton = document.querySelector(".equals"); //Number button click events
+//nine
+
+nineButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "9";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "9";
+  }
+}); //eight
+
+eightButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "8";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "8";
+  }
+}); //seven
+
+sevenButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "7";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "7";
+  }
+}); //six
+
+sixButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "6";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "6";
+  }
+}); //five
+
+fiveButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "5";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "5";
+  }
+}); //four
+
+fourButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "4";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "4";
+  }
+}); //three
+
+threeButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "3";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "3";
+  }
+}); //two
+
+twoButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "2";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "2";
+  }
+}); //one
+
+oneButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "1";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "1";
+  }
+}); //zero
+
+zeroButton.addEventListener("click", function (parameter) {
+  if (Number(calcDisplay.innerHTML) == 0) {
+    calcDisplay.innerHTML = "0";
+  } else {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "0";
+  }
+});

@@ -43,3 +43,95 @@ const plusButton = document.querySelector(".plus");
 const zeroButton = document.querySelector(".zero");
 const decimalButton = document.querySelector(".decimal");
 const equalsButton = document.querySelector(".equals");
+
+//Number button click events
+//nine
+nineButton.addEventListener("click", (parameter) => {
+   if (Number(calcDisplay.innerHTML) == 0){
+        calcDisplay.innerHTML = "9";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "9"
+    }
+})
+//eight
+eightButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "8";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "8"
+     }
+ })
+ //seven
+sevenButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "7";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "7"
+     }
+ })
+ //six
+sixButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "6";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "6"
+     }
+ })
+ //five
+fiveButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "5";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "5"
+     }
+ })
+ //four
+fourButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "4";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "4"
+     }
+ })
+ //three
+ threeButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "3";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "3"
+     }
+ })
+ //two
+ twoButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "2";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "2"
+     }
+ })
+//one
+oneButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "1";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "1"
+     }
+ })
+ //zero
+ zeroButton.addEventListener("click", (parameter) => {
+    if (Number(calcDisplay.innerHTML) == 0){
+         calcDisplay.innerHTML = "0";
+     }
+     else{
+         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "0"
+     }
+ })
