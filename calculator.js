@@ -157,3 +157,8 @@ posNegButton.addEventListener("click", (parameter) => {
         posnegToggle = false;
     }
 })
+
+//percentage buttton; divides current front display number by 100.
+percentButton.addEventListener("click", (parameter) => {
+    calcDisplay.innerHTML = `${(Number(calcDisplay.innerHTML))/100}`;
+})

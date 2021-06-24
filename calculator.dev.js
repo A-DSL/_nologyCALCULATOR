@@ -136,4 +136,8 @@ posNegButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML.replace("-", ""));
     posnegToggle = false;
   }
+}); //percentage buttton; divides current front display number by 100.
+
+percentButton.addEventListener("click", function (parameter) {
+  calcDisplay.innerHTML = "".concat(Number(calcDisplay.innerHTML) / 100);
 });
