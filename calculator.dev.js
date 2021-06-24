@@ -11,7 +11,8 @@
 var frontNumber = 0;
 var backNumber = 0; //Variable that keeps track of whether an operator is being used.
 
-var operatorToggle = false; //Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
+var operatorToggle = false;
+var posnegToggle = false; //Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
 
 var divideToggle = false;
 var multiplyToggle = false;
@@ -118,5 +119,15 @@ zeroButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "0";
   } else {
     calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "0";
+  }
+}); //negative/positive number toggle
+
+posNegButton.addEventListener("click", function (parameter) {
+  if (posnegToggle == false) {
+    calcDisplay.innerHTML = "-" + "".concat(calcDisplay.innerHTML);
+    posnegToggle = true;
+  } else if (posnegToggle == true) {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML.replace("-", ""));
+    posnegToggle = false;
   }
 });

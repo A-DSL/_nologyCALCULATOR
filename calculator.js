@@ -14,6 +14,7 @@ let backNumber = 0;
 
 //Variable that keeps track of whether an operator is being used.
 let operatorToggle = false;
+let posnegToggle = false;
 //Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
 let divideToggle = false;
 let multiplyToggle = false;
@@ -100,38 +101,50 @@ fourButton.addEventListener("click", (parameter) => {
      }
  })
  //three
- threeButton.addEventListener("click", (parameter) => {
+threeButton.addEventListener("click", (parameter) => {
     if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "3";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "3"
-     }
- })
- //two
- twoButton.addEventListener("click", (parameter) => {
+        calcDisplay.innerHTML = "3";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "3"
+    }
+})
+//two
+twoButton.addEventListener("click", (parameter) => {
     if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "2";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "2"
-     }
- })
+        calcDisplay.innerHTML = "2";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "2"
+    }
+})
 //one
 oneButton.addEventListener("click", (parameter) => {
     if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "1";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "1"
-     }
- })
- //zero
- zeroButton.addEventListener("click", (parameter) => {
+        calcDisplay.innerHTML = "1";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "1"
+    }
+})
+//zero
+zeroButton.addEventListener("click", (parameter) => {
     if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "0";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "0"
-     }
- })
+        calcDisplay.innerHTML = "0";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "0"
+    }
+})
+
+//negative/positive number toggle
+posNegButton.addEventListener("click", (parameter) => {
+    if (posnegToggle == false){
+        calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
+        posnegToggle = true;
+    }
+    else if (posnegToggle == true){
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
+        posnegToggle = false;
+    }
+})
