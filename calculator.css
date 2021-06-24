@@ -67,6 +67,11 @@
   border-radius: 50px;
 }
 
+.highlightedorangebutton {
+  background-color: white;
+  color: #f87800;
+}
+
 @media screen and (min-width: 481px) {
   body {
     width: 100vw;
