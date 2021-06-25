@@ -9,13 +9,12 @@
 //C makes the front number 0.
 
 
-//Variable that will hold the back number (made when a new front number is made for operations).
+//Variable that will hold the back number (made when a new front number is created for operations).
 let backNumber = 0;
 
-//Variable that keeps track of whether an operator is being used.
-let operatorToggle = false;
+//Variable that keeps track of whether pos/neg is being used.
 let posnegToggle = false;
-//Variables that keep track of toggles for each operator. Used to control .highlightedpinkbutton class assignment.
+//Variables that keep track of toggles for each operator.
 let divideToggle = false;
 let multiplyToggle = false;
 let minusToggle = false;
@@ -178,20 +177,26 @@ percentButton.addEventListener("click", (parameter) => {
 //divide
 divideButton.addEventListener("click", (parameter) => {
     if (divideToggle == false){
-        //store front number at back
-        backNumber = `${calcDisplay.innerHTML}`;
-        calcDisplay.innerHTML = "0";
+        //store front number at back (unless another operator is being overriden)
+        if (multiplyToggle == false && minusToggle == false && plusToggle == false){
+            backNumber = `${calcDisplay.innerHTML}`;
+            calcDisplay.innerHTML = "0";
+        }
 
         //on
         divideToggle = true;
         divideButton.classList.add("highlightedpinkbutton");
+        divideButton.classList.remove("pinkbutton");
         //off
         multiplyToggle = false;
         multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         minusToggle = false;
         minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     else if (divideToggle == true){
@@ -202,25 +207,32 @@ divideButton.addEventListener("click", (parameter) => {
         //off
         divideToggle = false;
         divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
     }
 })
 //multiply
 multiplyButton.addEventListener("click", (parameter) => {
     if (multiplyToggle == false){
-        //store front number at back
-        backNumber = `${calcDisplay.innerHTML}`;
-        calcDisplay.innerHTML = "0";        
+        //store front number at back (unless another operator is being overriden)
+        if (divideToggle == false && minusToggle == false && plusToggle == false){
+            backNumber = `${calcDisplay.innerHTML}`;
+            calcDisplay.innerHTML = "0";
+        }      
 
         //on
         multiplyToggle = true;
         multiplyButton.classList.add("highlightedpinkbutton");
+        multiplyButton.classList.remove("pinkbutton");
         //off
         divideToggle = false;
         divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         minusToggle = false;
         minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     else if (multiplyToggle == true){
@@ -231,25 +243,32 @@ multiplyButton.addEventListener("click", (parameter) => {
         //off
         multiplyToggle = false;
         multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
     }
 })
 //minus
 minusButton.addEventListener("click", (parameter) => {
     if (minusToggle == false){
-        //store front number at back
-        backNumber = `${calcDisplay.innerHTML}`;
-        calcDisplay.innerHTML = "0";
+        //store front number at back (unless another operator is being overriden)
+        if (divideToggle == false && multiplyToggle == false && plusToggle == false){
+            backNumber = `${calcDisplay.innerHTML}`;
+            calcDisplay.innerHTML = "0";
+        }      
 
         //on
         minusToggle = true;
         minusButton.classList.add("highlightedpinkbutton");
+        minusButton.classList.remove("pinkbutton");
         //off
         divideToggle = false;
         divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         multiplyToggle = false;
         multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     else if (minusToggle == true){
@@ -260,25 +279,32 @@ minusButton.addEventListener("click", (parameter) => {
         //off
         minusToggle = false;
         minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
     }
 })
 //plus
 plusButton.addEventListener("click", (parameter) => {
     if (plusToggle == false){
-        //store front number at back
-        backNumber = `${calcDisplay.innerHTML}`;
-        calcDisplay.innerHTML = "0";
+        //store front number at back (unless another operator is being overriden)
+        if (divideToggle == false && multiplyToggle == false && minusToggle == false){
+            backNumber = `${calcDisplay.innerHTML}`;
+            calcDisplay.innerHTML = "0";
+        }      
 
         //on
         plusToggle = true;
         plusButton.classList.add("highlightedpinkbutton");
+        plusButton.classList.remove("pinkbutton");
         //off
         divideToggle = false;
         divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         multiplyToggle = false;
         multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         minusToggle = false;
         minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     else if (plusToggle == true){
@@ -289,6 +315,7 @@ plusButton.addEventListener("click", (parameter) => {
         //off
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
     }
 })
 
@@ -300,6 +327,7 @@ equalsButton.addEventListener("click", (parameter) => {
         backNumber = "0";
         divideToggle = false;
         divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     //conducts multiplication
@@ -308,6 +336,7 @@ equalsButton.addEventListener("click", (parameter) => {
         backNumber = "0";
         multiplyToggle = false;
         multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     //conducts subtraction
@@ -316,6 +345,7 @@ equalsButton.addEventListener("click", (parameter) => {
         backNumber = "0";
         minusToggle = false;
         minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     //conducts addition
@@ -324,6 +354,7 @@ equalsButton.addEventListener("click", (parameter) => {
         backNumber = "0";
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
         posnegToggle = false;
     }
     //does nothing if no toggle is on.
@@ -331,22 +362,40 @@ equalsButton.addEventListener("click", (parameter) => {
 })
 
 //AC/C button. deletes front number, transfers back number to front, and disables all operator toggles.
-acButton.addEventListener("click", (parameter => {
+acButton.addEventListener("click", (parameter) => {
     if (backNumber != "0"){
         calcDisplay.innerHTML = `${backNumber}`;
         backNumber = "0";
         acButton.innerHTML = "C";
         divideToggle = false;
+        divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         minusToggle = false;
+        minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         plusToggle = false;
+        plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
     }
     else{
         calcDisplay.innerHTML = "0";
         acButton.innerHTML = "AC";
         divideToggle = false;
+        divideButton.classList.remove("highlightedpinkbutton");
+        divideButton.classList.add("pinkbutton");
         multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedpinkbutton");
+        multiplyButton.classList.add("pinkbutton");
         minusToggle = false;
+        minusButton.classList.remove("highlightedpinkbutton");
+        minusButton.classList.add("pinkbutton");
         plusToggle = false;
+        plusButton.classList.remove("highlightedpinkbutton");
+        plusButton.classList.add("pinkbutton");
     }
-}))
+})
+
+//...this code is not very efficient ..' in the future i need to like, make more functions that replicate all this stuff such as the class addition/removal.

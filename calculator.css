@@ -70,6 +70,7 @@
 .highlightedpinkbutton {
   background-color: white;
   color: #e44ac2;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 481px) {
