@@ -139,61 +139,105 @@ posNegButton.addEventListener("click", function (parameter) {
 
 percentButton.addEventListener("click", function (parameter) {
   calcDisplay.innerHTML = "".concat(Number(calcDisplay.innerHTML) / 100);
-}); //operator buttons. assigns class and affects button toggles.
+}); //operator buttons. assigns class, toggles buttons, and stores/unstores front number to/from back.
 //divide
 
 divideButton.addEventListener("click", function (parameter) {
   if (divideToggle == false) {
-    //on
-    divideToggle == true; //off
+    //store front number at back
+    backNumber = "".concat(calcDisplay.innerHTML);
+    calcDisplay.innerHTML = "0"; //on
 
-    multiplyToggle == false;
-    minusToggle == false;
-    plusToggle == false;
+    divideToggle = true;
+    divideButton.classList.add("highlightedorangebutton"); //off
+
+    multiplyToggle = false;
+    multiplyButton.classList.remove("highlightedorangebutton");
+    minusToggle = false;
+    minusButton.classList.remove("highlightedorangebutton");
+    plusToggle = false;
+    plusButton.classList.remove("highlightedorangebutton");
   } else if (divideToggle == true) {
-    //off
+    //return back number to front
+    calcDisplay.innerHTML = backNumber;
+    backNumber = "0"; //off
+
     divideToggle = false;
+    divideButton.classList.remove("highlightedorangebutton");
   }
 }); //multiply
 
 multiplyButton.addEventListener("click", function (parameter) {
   if (multiplyToggle == false) {
-    //on
-    multiplyToggle == true; //off
+    //store front number at back
+    backNumber = "".concat(calcDisplay.innerHTML);
+    calcDisplay.innerHTML = "0"; //on
 
-    divideToggle == false;
-    minusToggle == false;
-    plusToggle == false;
+    multiplyToggle = true;
+    multiplyButton.classList.add("highlightedorangebutton"); //off
+
+    divideToggle = false;
+    divideButton.classList.remove("highlightedorangebutton");
+    minusToggle = false;
+    minusButton.classList.remove("highlightedorangebutton");
+    plusToggle = false;
+    plusButton.classList.remove("highlightedorangebutton");
   } else if (multiplyToggle == true) {
-    //off
+    //return back number to front
+    calcDisplay.innerHTML = backNumber;
+    backNumber = "0"; //off
+
     multiplyToggle = false;
+    multiplyButton.classList.remove("highlightedorangebutton");
   }
 }); //minus
 
 minusButton.addEventListener("click", function (parameter) {
   if (minusToggle == false) {
-    //on
-    minusToggle == true; //off
+    //store front number at back
+    backNumber = "".concat(calcDisplay.innerHTML);
+    calcDisplay.innerHTML = "0"; //on
 
-    divideToggle == false;
-    multiplyToggle == false;
-    plusToggle == false;
+    minusToggle = true;
+    minusButton.classList.add("highlightedorangebutton"); //off
+
+    divideToggle = false;
+    divideButton.classList.remove("highlightedorangebutton");
+    multiplyToggle = false;
+    multiplyButton.classList.remove("highlightedorangebutton");
+    plusToggle = false;
+    plusButton.classList.remove("highlightedorangebutton");
   } else if (minusToggle == true) {
-    //off
+    //return back number to front
+    calcDisplay.innerHTML = backNumber;
+    backNumber = "0"; //off
+
     minusToggle = false;
+    minusButton.classList.remove("highlightedorangebutton");
   }
 }); //plus
 
 plusButton.addEventListener("click", function (parameter) {
   if (plusToggle == false) {
-    //on
-    plusToggle == true; //off
+    //store front number at back
+    backNumber = "".concat(calcDisplay.innerHTML);
+    calcDisplay.innerHTML = "0"; //on
 
-    divideToggle == false;
-    multiplyToggle == false;
-    minusToggle == false;
+    plusToggle = true;
+    plusButton.classList.add("highlightedorangebutton"); //off
+
+    divideToggle = false;
+    divideButton.classList.remove("highlightedorangebutton");
+    multiplyToggle = false;
+    multiplyButton.classList.remove("highlightedorangebutton");
+    minusToggle = false;
+    minusButton.classList.remove("highlightedorangebutton");
   } else if (plusToggle == true) {
-    //off
+    //return back number to front
+    calcDisplay.innerHTML = backNumber;
+    backNumber = "0"; //off
+
     plusToggle = false;
+    plusButton.classList.remove("highlightedorangebutton");
   }
 });

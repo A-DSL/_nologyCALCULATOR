@@ -163,72 +163,116 @@ percentButton.addEventListener("click", (parameter) => {
     calcDisplay.innerHTML = `${(Number(calcDisplay.innerHTML))/100}`;
 })
 
-//operator buttons. assigns class and affects button toggles.
+//operator buttons. assigns class, toggles buttons, and stores/unstores front number to/from back.
 //divide
 divideButton.addEventListener("click", (parameter) => {
     if (divideToggle == false){
+        //store front number at back
+        backNumber = `${calcDisplay.innerHTML}`;
+        calcDisplay.innerHTML = "0";
 
         //on
-        divideToggle == true;
+        divideToggle = true;
+        divideButton.classList.add("highlightedorangebutton");
         //off
-        multiplyToggle == false;
-        minusToggle == false;
-        plusToggle == false;
+        multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedorangebutton");
+        minusToggle = false;
+        minusButton.classList.remove("highlightedorangebutton");
+        plusToggle = false;
+        plusButton.classList.remove("highlightedorangebutton");
     }
     else if (divideToggle == true){
-      
+        //return back number to front
+        calcDisplay.innerHTML = backNumber;
+        backNumber = "0";
+
         //off
         divideToggle = false;
+        divideButton.classList.remove("highlightedorangebutton");
     }
 })
 //multiply
 multiplyButton.addEventListener("click", (parameter) => {
     if (multiplyToggle == false){
+        //store front number at back
+        backNumber = `${calcDisplay.innerHTML}`;
+        calcDisplay.innerHTML = "0";        
 
         //on
-        multiplyToggle == true;
+        multiplyToggle = true;
+        multiplyButton.classList.add("highlightedorangebutton");
         //off
-        divideToggle == false;
-        minusToggle == false;
-        plusToggle == false;
+        divideToggle = false;
+        divideButton.classList.remove("highlightedorangebutton");
+        minusToggle = false;
+        minusButton.classList.remove("highlightedorangebutton");
+        plusToggle = false;
+        plusButton.classList.remove("highlightedorangebutton");
     }
     else if (multiplyToggle == true){
-        
+        //return back number to front
+        calcDisplay.innerHTML = backNumber;
+        backNumber = "0";
+
         //off
         multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedorangebutton");
     }
 })
 //minus
 minusButton.addEventListener("click", (parameter) => {
     if (minusToggle == false){
+        //store front number at back
+        backNumber = `${calcDisplay.innerHTML}`;
+        calcDisplay.innerHTML = "0";
 
         //on
-        minusToggle == true;
+        minusToggle = true;
+        minusButton.classList.add("highlightedorangebutton");
         //off
-        divideToggle == false;
-        multiplyToggle == false;
-        plusToggle == false;
+        divideToggle = false;
+        divideButton.classList.remove("highlightedorangebutton");
+        multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedorangebutton");
+        plusToggle = false;
+        plusButton.classList.remove("highlightedorangebutton");
     }
     else if (minusToggle == true){
+        //return back number to front
+        calcDisplay.innerHTML = backNumber;
+        backNumber = "0";
 
         //off
         minusToggle = false;
+        minusButton.classList.remove("highlightedorangebutton");
     }
 })
 //plus
 plusButton.addEventListener("click", (parameter) => {
     if (plusToggle == false){
+        //store front number at back
+        backNumber = `${calcDisplay.innerHTML}`;
+        calcDisplay.innerHTML = "0";
 
         //on
-        plusToggle == true;
+        plusToggle = true;
+        plusButton.classList.add("highlightedorangebutton");
         //off
-        divideToggle == false;
-        multiplyToggle == false;
-        minusToggle == false;
+        divideToggle = false;
+        divideButton.classList.remove("highlightedorangebutton");
+        multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedorangebutton");
+        minusToggle = false;
+        minusButton.classList.remove("highlightedorangebutton");
     }
     else if (plusToggle == true){
+        //return back number to front
+        calcDisplay.innerHTML = backNumber;
+        backNumber = "0";
 
         //off
         plusToggle = false;
+        plusButton.classList.remove("highlightedorangebutton");
     }
 })
