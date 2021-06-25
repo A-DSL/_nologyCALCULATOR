@@ -48,8 +48,9 @@ const equalsButton = document.querySelector(".equals");
 //Number button click events
 //nine
 nineButton.addEventListener("click", (parameter) => {
-   if (Number(calcDisplay.innerHTML) == 0){
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "9";
+        acButton.innerHTML = "C";
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "9"
@@ -57,53 +58,59 @@ nineButton.addEventListener("click", (parameter) => {
 })
 //eight
 eightButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "8";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "8"
-     }
- })
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
+        calcDisplay.innerHTML = "8";
+        acButton.innerHTML = "C";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "8"
+    }
+})
  //seven
 sevenButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "7";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "7"
-     }
- })
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
+        calcDisplay.innerHTML = "7";
+        acButton.innerHTML = "C";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "7"
+    }
+})
  //six
 sixButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "6";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "6"
-     }
- })
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
+        calcDisplay.innerHTML = "6";
+        acButton.innerHTML = "C";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "6"
+    }
+})
  //five
 fiveButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "5";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "5"
-     }
- })
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
+        calcDisplay.innerHTML = "5";
+        acButton.innerHTML = "C";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "5"
+    }
+})
  //four
 fourButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
-         calcDisplay.innerHTML = "4";
-     }
-     else{
-         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "4"
-     }
- })
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
+        calcDisplay.innerHTML = "4";
+        acButton.innerHTML = "C";
+    }
+    else{
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "4"
+    }
+})
  //three
 threeButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "3";
+        acButton.innerHTML = "C";
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "3"
@@ -111,8 +118,9 @@ threeButton.addEventListener("click", (parameter) => {
 })
 //two
 twoButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "2";
+        acButton.innerHTML = "C";
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "2"
@@ -120,8 +128,9 @@ twoButton.addEventListener("click", (parameter) => {
 })
 //one
 oneButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "1";
+        acButton.innerHTML = "C";
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "1"
@@ -129,11 +138,12 @@ oneButton.addEventListener("click", (parameter) => {
 })
 //zero
 zeroButton.addEventListener("click", (parameter) => {
-    if (Number(calcDisplay.innerHTML) == 0){
+    if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "0";
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "0"
+        acButton.innerHTML = "C";
     }
 })
 
@@ -142,21 +152,22 @@ decimalButton.addEventListener("click", (parameter) => {
     if (calcDisplay.innerHTML.includes(".")){
     }
     else{
-        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "." 
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "."
+        acButton.innerHTML = "C"; 
     }
 })
 
 //negative/positive number toggle
-posNegButton.addEventListener("click", (parameter) => {
-    if (posnegToggle == false){
-        calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
-        posnegToggle = true;
-    }
-    else if (posnegToggle == true){
-        calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
-        posnegToggle = false;
-    }
-})
+//posNegButton.addEventListener("click", (parameter) => {
+  //  if (posnegToggle == false){
+    //    calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
+      //  posnegToggle = true;
+    //}
+    //else if (posnegToggle == true){
+      //  calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
+      //  posnegToggle = false;
+    //}
+//})
 
 //percentage buttton; divides current front display number by 100.
 percentButton.addEventListener("click", (parameter) => {
@@ -276,3 +287,58 @@ plusButton.addEventListener("click", (parameter) => {
         plusButton.classList.remove("highlightedorangebutton");
     }
 })
+
+//equals button. returns combination of first and second number with expected operator, if an operator toggle is on. following the operation, the associated toggle is disabled (class is also removed) and the back number is deleted.
+equalsButton.addEventListener("click", (parameter) => {
+    //conducts division
+    if (divideToggle == true){
+        calcDisplay.innerHTML = `${Number(backNumber)/Number(calcDisplay.innerHTML)}`
+        backNumber = "0";
+        divideToggle = false;
+        divideButton.classList.remove("highlightedorangebutton");
+    }
+    //conducts multiplication
+    else if (multiplyToggle == true){
+        calcDisplay.innerHTML = `${Number(backNumber)*Number(calcDisplay.innerHTML)}`
+        backNumber = "0";
+        multiplyToggle = false;
+        multiplyButton.classList.remove("highlightedorangebutton");
+    }
+    //conducts subtraction
+    else if (minusToggle == true){
+        calcDisplay.innerHTML = `${Number(backNumber)-Number(calcDisplay.innerHTML)}`
+        backNumber = "0";
+        minusToggle = false;
+        minusButton.classList.remove("highlightedorangebutton");
+    }
+    //conducts addition
+    else if (plusToggle == true){
+        calcDisplay.innerHTML = `${Number(backNumber)+Number(calcDisplay.innerHTML)}`
+        backNumber = "0";
+        plusToggle = false;
+        plusButton.classList.remove("highlightedorangebutton");
+    }
+    //does nothing if no toggle is on.
+    else{}
+})
+
+//AC/C button. deletes front number, transfers back number to front, and disables all operator toggles.
+acButton.addEventListener("click", (parameter => {
+    if (backNumber != "0"){
+        calcDisplay.innerHTML = `${backNumber}`;
+        backNumber = "0";
+        acButton.innerHTML = "C";
+        divideToggle = false;
+        multiplyToggle = false;
+        minusToggle = false;
+        plusToggle = false;
+    }
+    else{
+        calcDisplay.innerHTML = "0";
+        acButton.innerHTML = "AC";
+        divideToggle = false;
+        multiplyToggle = false;
+        minusToggle = false;
+        plusToggle = false;
+    }
+}))
