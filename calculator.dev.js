@@ -11,7 +11,7 @@
 var backNumber = 0; //Variable that keeps track of whether an operator is being used.
 
 var operatorToggle = false;
-var posnegToggle = false; //Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
+var posnegToggle = false; //Variables that keep track of toggles for each operator. Used to control .highlightedpinkbutton class assignment.
 
 var divideToggle = false;
 var multiplyToggle = false;
@@ -137,17 +137,16 @@ decimalButton.addEventListener("click", function (parameter) {
     acButton.innerHTML = "C";
   }
 }); //negative/positive number toggle
-//posNegButton.addEventListener("click", (parameter) => {
-//  if (posnegToggle == false){
-//    calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
-//  posnegToggle = true;
-//}
-//else if (posnegToggle == true){
-//  calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
-//  posnegToggle = false;
-//}
-//})
-//percentage buttton; divides current front display number by 100.
+
+posNegButton.addEventListener("click", function (parameter) {
+  if (posnegToggle == false) {
+    calcDisplay.innerHTML = "-" + "".concat(calcDisplay.innerHTML);
+    posnegToggle = true;
+  } else if (posnegToggle == true) {
+    calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML.replace("-", ""));
+    posnegToggle = false;
+  }
+}); //percentage buttton; divides current front display number by 100.
 
 percentButton.addEventListener("click", function (parameter) {
   calcDisplay.innerHTML = "".concat(Number(calcDisplay.innerHTML) / 100);
@@ -161,21 +160,22 @@ divideButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "0"; //on
 
     divideToggle = true;
-    divideButton.classList.add("highlightedorangebutton"); //off
+    divideButton.classList.add("highlightedpinkbutton"); //off
 
     multiplyToggle = false;
-    multiplyButton.classList.remove("highlightedorangebutton");
+    multiplyButton.classList.remove("highlightedpinkbutton");
     minusToggle = false;
-    minusButton.classList.remove("highlightedorangebutton");
+    minusButton.classList.remove("highlightedpinkbutton");
     plusToggle = false;
-    plusButton.classList.remove("highlightedorangebutton");
+    plusButton.classList.remove("highlightedpinkbutton");
+    posnegToggle = false;
   } else if (divideToggle == true) {
     //return back number to front
     calcDisplay.innerHTML = backNumber;
     backNumber = "0"; //off
 
     divideToggle = false;
-    divideButton.classList.remove("highlightedorangebutton");
+    divideButton.classList.remove("highlightedpinkbutton");
   }
 }); //multiply
 
@@ -186,21 +186,22 @@ multiplyButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "0"; //on
 
     multiplyToggle = true;
-    multiplyButton.classList.add("highlightedorangebutton"); //off
+    multiplyButton.classList.add("highlightedpinkbutton"); //off
 
     divideToggle = false;
-    divideButton.classList.remove("highlightedorangebutton");
+    divideButton.classList.remove("highlightedpinkbutton");
     minusToggle = false;
-    minusButton.classList.remove("highlightedorangebutton");
+    minusButton.classList.remove("highlightedpinkbutton");
     plusToggle = false;
-    plusButton.classList.remove("highlightedorangebutton");
+    plusButton.classList.remove("highlightedpinkbutton");
+    posnegToggle = false;
   } else if (multiplyToggle == true) {
     //return back number to front
     calcDisplay.innerHTML = backNumber;
     backNumber = "0"; //off
 
     multiplyToggle = false;
-    multiplyButton.classList.remove("highlightedorangebutton");
+    multiplyButton.classList.remove("highlightedpinkbutton");
   }
 }); //minus
 
@@ -211,21 +212,22 @@ minusButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "0"; //on
 
     minusToggle = true;
-    minusButton.classList.add("highlightedorangebutton"); //off
+    minusButton.classList.add("highlightedpinkbutton"); //off
 
     divideToggle = false;
-    divideButton.classList.remove("highlightedorangebutton");
+    divideButton.classList.remove("highlightedpinkbutton");
     multiplyToggle = false;
-    multiplyButton.classList.remove("highlightedorangebutton");
+    multiplyButton.classList.remove("highlightedpinkbutton");
     plusToggle = false;
-    plusButton.classList.remove("highlightedorangebutton");
+    plusButton.classList.remove("highlightedpinkbutton");
+    posnegToggle = false;
   } else if (minusToggle == true) {
     //return back number to front
     calcDisplay.innerHTML = backNumber;
     backNumber = "0"; //off
 
     minusToggle = false;
-    minusButton.classList.remove("highlightedorangebutton");
+    minusButton.classList.remove("highlightedpinkbutton");
   }
 }); //plus
 
@@ -236,21 +238,22 @@ plusButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "0"; //on
 
     plusToggle = true;
-    plusButton.classList.add("highlightedorangebutton"); //off
+    plusButton.classList.add("highlightedpinkbutton"); //off
 
     divideToggle = false;
-    divideButton.classList.remove("highlightedorangebutton");
+    divideButton.classList.remove("highlightedpinkbutton");
     multiplyToggle = false;
-    multiplyButton.classList.remove("highlightedorangebutton");
+    multiplyButton.classList.remove("highlightedpinkbutton");
     minusToggle = false;
-    minusButton.classList.remove("highlightedorangebutton");
+    minusButton.classList.remove("highlightedpinkbutton");
+    posnegToggle = false;
   } else if (plusToggle == true) {
     //return back number to front
     calcDisplay.innerHTML = backNumber;
     backNumber = "0"; //off
 
     plusToggle = false;
-    plusButton.classList.remove("highlightedorangebutton");
+    plusButton.classList.remove("highlightedpinkbutton");
   }
 }); //equals button. returns combination of first and second number with expected operator, if an operator toggle is on. following the operation, the associated toggle is disabled (class is also removed) and the back number is deleted.
 
@@ -260,25 +263,29 @@ equalsButton.addEventListener("click", function (parameter) {
     calcDisplay.innerHTML = "".concat(Number(backNumber) / Number(calcDisplay.innerHTML));
     backNumber = "0";
     divideToggle = false;
-    divideButton.classList.remove("highlightedorangebutton");
+    divideButton.classList.remove("highlightedpinkbutton");
+    posnegToggle = false;
   } //conducts multiplication
   else if (multiplyToggle == true) {
       calcDisplay.innerHTML = "".concat(Number(backNumber) * Number(calcDisplay.innerHTML));
       backNumber = "0";
       multiplyToggle = false;
-      multiplyButton.classList.remove("highlightedorangebutton");
+      multiplyButton.classList.remove("highlightedpinkbutton");
+      posnegToggle = false;
     } //conducts subtraction
     else if (minusToggle == true) {
         calcDisplay.innerHTML = "".concat(Number(backNumber) - Number(calcDisplay.innerHTML));
         backNumber = "0";
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
       } //conducts addition
       else if (plusToggle == true) {
           calcDisplay.innerHTML = "".concat(Number(backNumber) + Number(calcDisplay.innerHTML));
           backNumber = "0";
           plusToggle = false;
-          plusButton.classList.remove("highlightedorangebutton");
+          plusButton.classList.remove("highlightedpinkbutton");
+          posnegToggle = false;
         } //does nothing if no toggle is on.
         else {}
 }); //AC/C button. deletes front number, transfers back number to front, and disables all operator toggles.

@@ -1,3 +1,9 @@
+$coolpink: rgb(228, 74, 194);
+$coolgrey: rgb(141, 141, 141);
+$coolgreylight: rgb(180, 180, 180);
+$coolblack: rgb(71, 71, 71);
+$coolblacklight: rgb(117, 117, 117);
+
 *{
     border:0px;
     margin:0px;
@@ -37,24 +43,24 @@
             border-radius:100%;
         }
         > .greybutton{
-            background-color:grey;
+            background-color:$coolgrey;
             &:hover{
-                background-color:rgb(189, 189, 189);
+                background-color:$coolgreylight;
                 cursor:pointer;
             }
         }
-        > .orangebutton{
-            background-color:rgb(248, 120, 0);
+        > .pinkbutton{
+            background-color:$coolpink;
             &:hover{
                 background-color:white;
-                color:rgb(248, 120, 0);
+                color:$coolpink;
                 cursor:pointer;
             }
         }
         > .blackbutton{
-            background-color:rgb(59, 59, 59);
+            background-color:$coolblack;
             &:hover{
-                background-color:rgb(117, 117, 117);
+                background-color:$coolblacklight;
                 cursor:pointer;
             }
         }
@@ -67,9 +73,9 @@
     }
 }
 
-.highlightedorangebutton{
+.highlightedpinkbutton{
     background-color:white;
-    color:rgb(248, 120, 0);
+    color:$coolpink;
 }
 
 @media screen and (min-width:481px){

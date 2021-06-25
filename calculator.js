@@ -15,7 +15,7 @@ let backNumber = 0;
 //Variable that keeps track of whether an operator is being used.
 let operatorToggle = false;
 let posnegToggle = false;
-//Variables that keep track of toggles for each operator. Used to control .highlightedorangebutton class assignment.
+//Variables that keep track of toggles for each operator. Used to control .highlightedpinkbutton class assignment.
 let divideToggle = false;
 let multiplyToggle = false;
 let minusToggle = false;
@@ -158,16 +158,16 @@ decimalButton.addEventListener("click", (parameter) => {
 })
 
 //negative/positive number toggle
-//posNegButton.addEventListener("click", (parameter) => {
-  //  if (posnegToggle == false){
-    //    calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
-      //  posnegToggle = true;
-    //}
-    //else if (posnegToggle == true){
-      //  calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
-      //  posnegToggle = false;
-    //}
-//})
+posNegButton.addEventListener("click", (parameter) => {
+    if (posnegToggle == false){
+        calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
+        posnegToggle = true;
+    }
+    else if (posnegToggle == true){
+        calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
+        posnegToggle = false;
+    }
+})
 
 //percentage buttton; divides current front display number by 100.
 percentButton.addEventListener("click", (parameter) => {
@@ -184,14 +184,15 @@ divideButton.addEventListener("click", (parameter) => {
 
         //on
         divideToggle = true;
-        divideButton.classList.add("highlightedorangebutton");
+        divideButton.classList.add("highlightedpinkbutton");
         //off
         multiplyToggle = false;
-        multiplyButton.classList.remove("highlightedorangebutton");
+        multiplyButton.classList.remove("highlightedpinkbutton");
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
         plusToggle = false;
-        plusButton.classList.remove("highlightedorangebutton");
+        plusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     else if (divideToggle == true){
         //return back number to front
@@ -200,7 +201,7 @@ divideButton.addEventListener("click", (parameter) => {
 
         //off
         divideToggle = false;
-        divideButton.classList.remove("highlightedorangebutton");
+        divideButton.classList.remove("highlightedpinkbutton");
     }
 })
 //multiply
@@ -212,14 +213,15 @@ multiplyButton.addEventListener("click", (parameter) => {
 
         //on
         multiplyToggle = true;
-        multiplyButton.classList.add("highlightedorangebutton");
+        multiplyButton.classList.add("highlightedpinkbutton");
         //off
         divideToggle = false;
-        divideButton.classList.remove("highlightedorangebutton");
+        divideButton.classList.remove("highlightedpinkbutton");
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
         plusToggle = false;
-        plusButton.classList.remove("highlightedorangebutton");
+        plusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     else if (multiplyToggle == true){
         //return back number to front
@@ -228,7 +230,7 @@ multiplyButton.addEventListener("click", (parameter) => {
 
         //off
         multiplyToggle = false;
-        multiplyButton.classList.remove("highlightedorangebutton");
+        multiplyButton.classList.remove("highlightedpinkbutton");
     }
 })
 //minus
@@ -240,14 +242,15 @@ minusButton.addEventListener("click", (parameter) => {
 
         //on
         minusToggle = true;
-        minusButton.classList.add("highlightedorangebutton");
+        minusButton.classList.add("highlightedpinkbutton");
         //off
         divideToggle = false;
-        divideButton.classList.remove("highlightedorangebutton");
+        divideButton.classList.remove("highlightedpinkbutton");
         multiplyToggle = false;
-        multiplyButton.classList.remove("highlightedorangebutton");
+        multiplyButton.classList.remove("highlightedpinkbutton");
         plusToggle = false;
-        plusButton.classList.remove("highlightedorangebutton");
+        plusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     else if (minusToggle == true){
         //return back number to front
@@ -256,7 +259,7 @@ minusButton.addEventListener("click", (parameter) => {
 
         //off
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
     }
 })
 //plus
@@ -268,14 +271,15 @@ plusButton.addEventListener("click", (parameter) => {
 
         //on
         plusToggle = true;
-        plusButton.classList.add("highlightedorangebutton");
+        plusButton.classList.add("highlightedpinkbutton");
         //off
         divideToggle = false;
-        divideButton.classList.remove("highlightedorangebutton");
+        divideButton.classList.remove("highlightedpinkbutton");
         multiplyToggle = false;
-        multiplyButton.classList.remove("highlightedorangebutton");
+        multiplyButton.classList.remove("highlightedpinkbutton");
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     else if (plusToggle == true){
         //return back number to front
@@ -284,7 +288,7 @@ plusButton.addEventListener("click", (parameter) => {
 
         //off
         plusToggle = false;
-        plusButton.classList.remove("highlightedorangebutton");
+        plusButton.classList.remove("highlightedpinkbutton");
     }
 })
 
@@ -295,28 +299,32 @@ equalsButton.addEventListener("click", (parameter) => {
         calcDisplay.innerHTML = `${Number(backNumber)/Number(calcDisplay.innerHTML)}`
         backNumber = "0";
         divideToggle = false;
-        divideButton.classList.remove("highlightedorangebutton");
+        divideButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     //conducts multiplication
     else if (multiplyToggle == true){
         calcDisplay.innerHTML = `${Number(backNumber)*Number(calcDisplay.innerHTML)}`
         backNumber = "0";
         multiplyToggle = false;
-        multiplyButton.classList.remove("highlightedorangebutton");
+        multiplyButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     //conducts subtraction
     else if (minusToggle == true){
         calcDisplay.innerHTML = `${Number(backNumber)-Number(calcDisplay.innerHTML)}`
         backNumber = "0";
         minusToggle = false;
-        minusButton.classList.remove("highlightedorangebutton");
+        minusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     //conducts addition
     else if (plusToggle == true){
         calcDisplay.innerHTML = `${Number(backNumber)+Number(calcDisplay.innerHTML)}`
         backNumber = "0";
         plusToggle = false;
-        plusButton.classList.remove("highlightedorangebutton");
+        plusButton.classList.remove("highlightedpinkbutton");
+        posnegToggle = false;
     }
     //does nothing if no toggle is on.
     else{}
