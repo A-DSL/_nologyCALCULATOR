@@ -138,7 +138,7 @@ decimalButton.addEventListener("click", function (parameter) {
 }); //negative/positive number toggle
 
 posNegButton.addEventListener("click", function (parameter) {
-  if (posnegToggle == false) {
+  if (posnegToggle == false && !calcDisplay.innerHTML.includes("-")) {
     calcDisplay.innerHTML = "-" + "".concat(calcDisplay.innerHTML);
     posnegToggle = true;
   } else if (posnegToggle == true) {
@@ -342,6 +342,7 @@ acButton.addEventListener("click", function (parameter) {
     plusToggle = false;
     plusButton.classList.remove("highlightedpinkbutton");
     plusButton.classList.add("pinkbutton");
+    posnegToggle = false;
   } else {
     calcDisplay.innerHTML = "0";
     acButton.innerHTML = "AC";
@@ -357,5 +358,6 @@ acButton.addEventListener("click", function (parameter) {
     plusToggle = false;
     plusButton.classList.remove("highlightedpinkbutton");
     plusButton.classList.add("pinkbutton");
+    posnegToggle = false;
   }
 }); //...this code is not very efficient ..' in the future i need to like, make more functions that replicate all this stuff such as the class addition/removal.

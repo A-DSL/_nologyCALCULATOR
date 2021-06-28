@@ -158,7 +158,7 @@ decimalButton.addEventListener("click", (parameter) => {
 
 //negative/positive number toggle
 posNegButton.addEventListener("click", (parameter) => {
-    if (posnegToggle == false){
+    if (posnegToggle == false && !(calcDisplay.innerHTML.includes("-"))){
         calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
         posnegToggle = true;
     }
@@ -379,6 +379,7 @@ acButton.addEventListener("click", (parameter) => {
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
         plusButton.classList.add("pinkbutton");
+        posnegToggle = false;
     }
     else{
         calcDisplay.innerHTML = "0";
@@ -395,6 +396,7 @@ acButton.addEventListener("click", (parameter) => {
         plusToggle = false;
         plusButton.classList.remove("highlightedpinkbutton");
         plusButton.classList.add("pinkbutton");
+        posnegToggle = false;
     }
 })
 
