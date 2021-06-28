@@ -124,6 +124,7 @@ oneButton.addEventListener("click", function (parameter) {
 zeroButton.addEventListener("click", function (parameter) {
   if (Number(calcDisplay.innerHTML) == 0 && !calcDisplay.innerHTML.includes(".")) {
     calcDisplay.innerHTML = "0";
+    posnegToggle = false;
   } else {
     calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML) + "0";
     acButton.innerHTML = "C";
@@ -140,8 +141,9 @@ decimalButton.addEventListener("click", function (parameter) {
 posNegButton.addEventListener("click", function (parameter) {
   if (posnegToggle == false && !calcDisplay.innerHTML.includes("-")) {
     calcDisplay.innerHTML = "-" + "".concat(calcDisplay.innerHTML);
+    acButton.innerHTML = "C";
     posnegToggle = true;
-  } else if (posnegToggle == true) {
+  } else if (posnegToggle == true || calcDisplay.innerHTML.includes("-")) {
     calcDisplay.innerHTML = "".concat(calcDisplay.innerHTML.replace("-", ""));
     posnegToggle = false;
   }

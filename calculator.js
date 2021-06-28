@@ -139,6 +139,7 @@ oneButton.addEventListener("click", (parameter) => {
 zeroButton.addEventListener("click", (parameter) => {
     if (Number(calcDisplay.innerHTML) == 0 && !(calcDisplay.innerHTML.includes("."))){
         calcDisplay.innerHTML = "0";
+        posnegToggle = false;
     }
     else{
         calcDisplay.innerHTML = `${calcDisplay.innerHTML}` + "0"
@@ -158,11 +159,12 @@ decimalButton.addEventListener("click", (parameter) => {
 
 //negative/positive number toggle
 posNegButton.addEventListener("click", (parameter) => {
-    if (posnegToggle == false && !(calcDisplay.innerHTML.includes("-"))){
+    if ((posnegToggle == false) && !(calcDisplay.innerHTML.includes("-"))){
         calcDisplay.innerHTML = "-" + `${calcDisplay.innerHTML}`
+        acButton.innerHTML = "C";
         posnegToggle = true;
     }
-    else if (posnegToggle == true){
+    else if (posnegToggle == true || calcDisplay.innerHTML.includes("-")){
         calcDisplay.innerHTML = `${calcDisplay.innerHTML.replace("-", "")}`
         posnegToggle = false;
     }
