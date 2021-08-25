@@ -1,0 +1,22 @@
+{
+  "name": "nologycalculator",
+  "version": "1.0.0",
+  "description": "Calculator Project for _nology course. Made using HTML, CSS+SCSS and JavaScript. Designed to try and accurately imitate the function of the simple iPhone calculator. Adapted to fit on phones, will set itself to certain dimensions when viewed on a large-enough screen.",
+  "main": "calculator.dev.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-DSL/nologyCALCULATOR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A-DSL/nologyCALCULATOR/issues"
+  },
+  "homepage": "https://github.com/A-DSL/nologyCALCULATOR#readme",
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  }
+}
